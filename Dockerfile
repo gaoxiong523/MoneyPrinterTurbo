@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /MoneyPrinterTurbo
 
 ENV PYTHONPATH="/MoneyPrinterTurbo:$PYTHONPATH"
-
+RUN ECHO "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib \n deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib \n deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib \n deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib \n deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib \n deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib \n deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib \n deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib" > /etc/apt/sources.list
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
